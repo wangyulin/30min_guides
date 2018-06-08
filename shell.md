@@ -20,10 +20,10 @@ Shell脚本编程30分钟入门
 - 第3行：创建一个目录shell_tut
 - 第4行：切换到shell_tut目录
 - 第5行：循环条件，一共循环10次
-- 第6行：创建一个test_1…10.txt文件
+- 第6行：创建一个test_0…9.txt文件
 - 第7行：循环体结束
 
-cd, mkdir, touch都是系统自带的程序，一般在/bin或者/usr/bin目录下。for, do, done是sh脚本语言的关键字。
+mkdir, touch都是系统自带的程序，一般在/bin或者/usr/bin目录下。for, do, done是sh脚本语言的关键字。
 
 ### shell和shell脚本的概念
 shell是指一种应用程序，这个应用程序提供了一个界面，用户通过这个界面访问操作系统内核的服务。Ken Thompson的sh是第一种Unix Shell，Windows Explorer是一个典型的图形界面Shell。
@@ -251,7 +251,7 @@ sh里没有多行注释，只能每一行加一个#号。就像这样：
 #### 查找子字符串
 
 	string="alibaba is a great company"
-	echo `expr index "$string" is`#输出：8，这个语句的意思是：找出单词is在这名话中的位置
+	echo `expr index "$string" is`#输出：3，这个语句的意思是：找出字母i在这名话中的位置，要在linux下运行，mac下会报错
 
 #### 更多
 参见本文档末尾的参考资料中[Advanced Bash-Scripting Guid Chapter 10.1](http://tldp.org/LDP/abs/html/string-manipulation.html)
@@ -275,7 +275,7 @@ sh里没有多行注释，只能每一行加一个#号。就像这样：
 
 在sh/bash里可不能这么写，如果else分支没有语句执行，就不要写这个else。
 
-还要注意，sh里的if [ $foo -eq 0 ]，这个方括号跟Java/PHP里if后面的圆括号大不相同，它是一个可执行程序（和cd, ls, grep一样），想不到吧？在CentOS上，它在/usr/bin目录下：
+还要注意，sh里的if [ $foo -eq 0 ]，这个方括号跟Java/PHP里if后面的圆括号大不相同，它是一个可执行程序（和ls, grep一样），想不到吧？在CentOS上，它在/usr/bin目录下：
 
 	ll /usr/bin/[
 	-rwxr-xr-x. 1 root root 33408 6月  22 2012 /usr/bin/[
